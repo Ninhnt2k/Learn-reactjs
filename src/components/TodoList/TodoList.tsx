@@ -2,17 +2,17 @@ import React from 'react';
 
 interface Data {
     toDos: string[];
-    deleteTodo: (index:number) => void;
+    deleteTodo?: (index:number) => void;
 }
 
-function TodoList(props?: Data) {
+const TodoList: React.FC<Data> = ({toDos, deleteTodo})=> {
 
     const showTodos =
-        props?.toDos.map((item, index) => {
+        toDos.map((item, index) => {
             return (
                 <li key={index}>
                     {item}
-                    <button onClick={() => props?.deleteTodo(index)}>Delete</button>
+                    <button onClick={() => deleteTodo ? deleteTodo(index) : null}>Delete</button>
                 </li>
             );
         })
