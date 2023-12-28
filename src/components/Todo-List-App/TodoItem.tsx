@@ -1,5 +1,5 @@
 import React from 'react';
-import {TodoItemProps} from "./TodoInterface";
+import {TodoItemProps} from "../TodoInterface";
 
 const TodoItem: React.FC<TodoItemProps> = ({todo,completed, onTodoCompleted })=> {
     const handleCheckboxChange = () => {

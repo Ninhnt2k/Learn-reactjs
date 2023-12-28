@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {User} from "../TodoInterface";
 
-type Data = {
-    addTodo:(text:string) => void;
-}
-
-const TodoForm = (props?: Data) => {
+const AddUser: React.FC<User> = ({addUser}) => {
     const [value, setValue] = useState('');
 
     const handleSubmit = (e:any) => {
         e.preventDefault();
         if (!value) return;
         setValue('');
-        props?.addTodo(value);
-    };
+        addUser(value);
+    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -21,11 +18,11 @@ const TodoForm = (props?: Data) => {
                 className="input"
                 value={value}
                 onChange={e => setValue(e.target.value)}
-                placeholder="Enter a new task"
+                placeholder='Enter'
             />
-            <button type="submit">Add</button>
         </form>
     );
-};
 
-export default TodoForm;
+}
+
+export default AddUser;
