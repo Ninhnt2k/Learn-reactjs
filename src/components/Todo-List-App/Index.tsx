@@ -1,5 +1,5 @@
 import React from 'react';
-import {Item} from "./TodoInterface";
+import {Item} from "../TodoInterface";
 import TodoList from "./TodoList";
 
 function Index () {
