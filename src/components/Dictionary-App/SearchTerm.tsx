@@ -6,7 +6,6 @@ const SearchTerm = () => {
     const [example, setExample] = useState('');
 
     const handleSearch = () => {
-
         setMeaning(meaning);
         setExample(example);
     }

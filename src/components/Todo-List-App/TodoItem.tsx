@@ -9,7 +9,7 @@ const TodoItem: React.FC<TodoItemProps> = ({todo,completed, onTodoCompleted })=>
     return (
         <div className='todo-item'>
             <span>{todo.text}</span>
-            <input type="checkbox" checked={completed} onChange={handleCheckboxChange}/>
+            <input type="checkbox" checked={completed} onChange={()=>handleCheckboxChange()}/>
         </div>
     );
 }
