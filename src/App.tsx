@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import Counter from "./components/Counter-App/Counter";
-import Index from "./components/User-List-App/Index";
-// import Index from "./components/Todo-List-App/Index";
+import IndexComponent from "./components/JobApp/IndexComponent";
+
 
 const App = () => {
+
   return (
     <div className="App">
-         {/*<Index />*/}
-        {/*<Counter />*/}
-        <Index />
+         <IndexComponent/>
     </div>
   );
 }
