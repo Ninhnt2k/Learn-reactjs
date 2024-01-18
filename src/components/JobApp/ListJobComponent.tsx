@@ -12,12 +12,26 @@ class ListJobComponent extends React.Component {
     }
 
     addNewJob = (job:any) => {
+        //cach1
         // this.setState( (pre:any) =>{
         //     return {...pre, arrJobs:[...pre.arrJobs, job]}
         // })
 
+        //cach2
+        // let currentJobs = this.state.arrJobs;
+        // currentJobs.push(job);
+
         this.setState({
-            arrJobs: [...this.state.arrJobs, job]
+            arrJobs: [...this.state.arrJobs, job],
+            // arrJobs: currentJobs,
+        })
+    }
+
+    deleteJob = (job:any) => {
+        let currentJobs = this.state.arrJobs;
+        currentJobs = currentJobs.filter(item => item.id !== job.id);
+        this.setState({
+            arrJobs: currentJobs,
         })
     }
 
@@ -25,8 +39,8 @@ class ListJobComponent extends React.Component {
 
         return (
             <div>
-                <AddJobComponent addNewJob={this.addNewJob}/>
-                <ChildComponent arrJobs={this.state.arrJobs}/>
+                <AddJobComponent addNewJob={this.addNewJob} />
+                <ChildComponent arrJobs={this.state.arrJobs} deleteJob={this.deleteJob}/>
             </div>
         );
     }

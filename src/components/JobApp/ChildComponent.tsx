@@ -11,6 +11,11 @@ class ChildComponent extends React.Component<any, any> {
         })
     }
 
+    handleOnClickDelete = (job:any) => {
+        alert('vui long xoa')
+        this.props.deleteJobs(job);
+    }
+
     render() {
         const {arrJobs} = this.props;
         let {showJob} = this.state;
@@ -28,7 +33,7 @@ class ChildComponent extends React.Component<any, any> {
                                     return (
                                         <div key={item.id}>
                                             <span>
-                                                {item.titleJob} - {item.salary}
+                                                {item.titleJob} - {item.salary}  <></> <span onClick={() => this.handleOnClickDelete(item)} >x</span>
                                             </span>
                                         </div>
                                     );
