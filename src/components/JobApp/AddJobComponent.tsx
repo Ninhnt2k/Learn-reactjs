@@ -1,5 +1,4 @@
 import React from "react";
-import ChildComponent from "./ChildComponent";
 
 class AddJobComponent extends React.Component<any> {
     state = {
@@ -7,13 +6,13 @@ class AddJobComponent extends React.Component<any> {
         salary: '',
     }
 
-    handleFirstname = (e:any) => {
+    handleTitleJob = (e:any) => {
        this.setState({
            titleJob: e.target.value,
        })
     }
 
-    handleLastName = (e:any) => {
+    handleSalary = (e:any) => {
         this.setState({
             salary : e.target.value,
         })
@@ -48,12 +47,12 @@ class AddJobComponent extends React.Component<any> {
                 <form>
                     <label htmlFor="fname">Title Job: </label><br/>
                     <input
-                        onChange={(event) => this.handleFirstname(event)}
+                        onChange={(event) => this.handleTitleJob(event)}
                         type="text"
                         value={this.state.titleJob}/>
                     <br/>
                     <label htmlFor="lname">Salary: </label><br/>
-                    <input onChange={(event) => this.handleLastName(event)}
+                    <input onChange={(event) => this.handleSalary(event)}
                            type="text"
                            value={this.state.salary} /><br/><br/>
                     <input
@@ -61,8 +60,6 @@ class AddJobComponent extends React.Component<any> {
                         type="submit" value="Submit"
                     />
                 </form>
-
-                {/*<ChildComponent titleJob={this.state.titleJob} salary= {this.state.salary} />*/}
             </>
         );
     }
