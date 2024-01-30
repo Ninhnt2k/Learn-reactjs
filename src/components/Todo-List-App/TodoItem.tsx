@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function TodoItem () {
+interface Data {
+   id: number;
+   title: string;
+   completed: boolean;
+}
+
+const TodoItem = (props?: Data) => {
+    const [completed, setCompleted] = useState(Data.completed);
+
+    const todoItem = () => {
+
+    }
+
 
     return (
         <div className='todo-item'>
