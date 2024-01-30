@@ -7,7 +7,7 @@ interface Data {
 }
 
 const TodoItem = (props?: Data) => {
-    const [completed, setCompleted] = useState(Data.completed);
+    // const [completed, setCompleted] = useState(Data.completed);
 
     const todoItem = () => {
 
