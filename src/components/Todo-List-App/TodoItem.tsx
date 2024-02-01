@@ -1,22 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {TodoItemProps} from "../TodoInterface";
 
-interface Data {
-   id: number;
-   title: string;
-   completed: boolean;
-}
-
-const TodoItem = (props?: Data) => {
-    // const [completed, setCompleted] = useState(Data.completed);
-
-    const todoItem = () => {
-
+const TodoItem: React.FC<TodoItemProps> = ({todo,completed, onTodoCompleted })=> {
+    const handleCheckboxChange = () => {
+        onTodoCompleted(todo.id);
     }
-
 
     return (
         <div className='todo-item'>
-
+            <span>{todo.text}</span>
+            <input type="checkbox" checked={completed} onChange={()=>handleCheckboxChange()}/>
         </div>
     );
 }
