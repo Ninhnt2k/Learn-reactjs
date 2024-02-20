@@ -1,4 +1,5 @@
 import React from 'react';
+import {toast} from "react-toastify";
 
 class AddTodo extends React.Component<any> {
     state={
@@ -13,7 +14,7 @@ class AddTodo extends React.Component<any> {
 
     handleAddToDo = () => {
         if (!this.state.title) {
-            alert('Vui long dien');
+            toast.error("Wow error");
             return;
             //if(undefined/null/empty) => false;
         }

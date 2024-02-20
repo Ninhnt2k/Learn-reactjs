@@ -25,3 +25,13 @@ export type ListUsers = {
     deleteUser: (id:number) => void;
 }
 
+export type Todo = {
+    id: number,
+    title: string,
+}
+
+export type editTodo = {
+    editTodo: Todo,
+}
+
+
