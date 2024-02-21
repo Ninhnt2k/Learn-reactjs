@@ -8,11 +8,10 @@ import Nav from "./components/Nav/Nav";
 import IndexComponent from "./components/JobApp/IndexComponent";
 import {
     BrowserRouter,
-    Switch,
     Route,
+    Switch
 } from 'react-router-dom';
 import Home from "./components/Home";
-
 
 const App = () => {
 
@@ -24,7 +23,7 @@ const App = () => {
                         <Nav/>
                         <img src={logo} className="App-logo" alt="logo"/>
                         <Switch>
-                            <Route path="/"><Home/></Route>
+                            <Route path="/" exact><Home/></Route>
                             <Route path="/todo"><ListTodo/></Route>
                             <Route path="/about"><IndexComponent/></Route>
                         </Switch>
