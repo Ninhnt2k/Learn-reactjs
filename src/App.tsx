@@ -9,24 +9,26 @@ import IndexComponent from "./components/JobApp/IndexComponent";
 import {
     BrowserRouter,
     Route,
-    Switch
+    Routes
 } from 'react-router-dom';
 import Home from "./components/Home";
+import ListUser from "./components/Users/ListUser";
 
 const App = () => {
 
     return (
         <React.StrictMode>
-            <BrowserRouter basename={'/'}>
+            <BrowserRouter>
                 <div className="App">
                     <header className="App-header">
                         <Nav/>
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <Switch>
-                            <Route path="/" exact><Home/></Route>
-                            <Route path="/todo"><ListTodo/></Route>
-                            <Route path="/about"><IndexComponent/></Route>
-                        </Switch>
+                        <Routes>
+                            <Route path="/" element={<Home/>} />
+                            <Route path="/todo" element={<ListTodo/>} />
+                            <Route path="/about" element={<IndexComponent/>} />
+                            <Route path="/user" element={<ListUser/>} />
+                        </Routes>
                     </header>
                     <ToastContainer
                         position="top-right"

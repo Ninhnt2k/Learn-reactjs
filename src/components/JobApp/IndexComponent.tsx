@@ -8,9 +8,7 @@ class IndexComponent extends React.Component{
                 <ListJobComponent />
             </div>
         ) ;
-
     }
-
 }
 
 export default IndexComponent;
