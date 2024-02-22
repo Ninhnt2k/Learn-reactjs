@@ -34,4 +34,16 @@ export type editTodo = {
     editTodo: Todo,
 }
 
+export type UserItem = {
+    id: number,
+    email: string,
+    first_name: string,
+    last_name: string,
+    avatar: string,
+}
+
+export type ListUserProps = {
+    listUsers: UserItem[];
+}
+
 
