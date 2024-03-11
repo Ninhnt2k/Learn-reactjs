@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import Home from "./components/Home";
 import ListUser from "./components/Users/ListUser";
+import DetailUser from "./components/Users/DetailUser";
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
                             <Route path="/todo" element={<ListTodo/>} />
                             <Route path="/about" element={<IndexComponent/>} />
                             <Route path="/user" element={<ListUser/>} />
+                            <Route path="/user/:id" element={<DetailUser/>} />
                         </Routes>
                     </header>
                     <ToastContainer
