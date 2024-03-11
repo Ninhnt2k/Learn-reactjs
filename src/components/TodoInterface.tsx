@@ -46,5 +46,14 @@ export type ListUserProps = {
     listUsers: UserItem[];
 }
 
+export type InitState = {
+    users: UserRedux[]
+}
+
+export type UserRedux = {
+    id: number;
+    name: string;
+}
+
 
 
