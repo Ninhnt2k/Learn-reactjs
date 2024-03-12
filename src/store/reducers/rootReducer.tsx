@@ -8,14 +8,26 @@ const initState: InitState = {
     ]
 }
 
-const rootReducer= (state = initState, action:any) => {
+const rootReducer = (state = initState, action:any) => {
     switch (action.type) {
         case 'DELETE_USER':
-            console.log('555', action);
-            return state;
+            let users = state.users;
+            users = users.filter(item => item.id !== action.payload.id);
+            return {
+                ...state,users
+            }
+        case 'CREATE_USER':
+            let id = Math.floor(Math.random() * 10000)
+            let user = {
+                id: id,
+                name: `random - ${id}`
+            }
+            return {
+                ...state, users: [...state.users,　user]
+            }
+            break;
         default:
             return state;
-
     }
     return state;
 
